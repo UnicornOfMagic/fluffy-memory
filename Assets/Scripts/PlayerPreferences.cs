@@ -2,10 +2,16 @@
 
 public class PlayerPreferences : MonoBehaviour
 {
-    public bool BunnyEars = false;
+    public Customizations Customization;
 
     private void Start()
     {
         DontDestroyOnLoad(this);
     }
+}
+
+public enum Customizations
+{
+    None,
+    BunnyEars
 }
