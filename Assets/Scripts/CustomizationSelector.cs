@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CustomizationSelector : MonoBehaviour
 {
     [SerializeField]
-    private Text selectedText;
+    private Text selectedText = null;
     [SerializeField]
-    private PlayerPreferences PlayerPreferences;
+    private PlayerPreferences PlayerPreferences = null;
 
     public void NextItem()
     {

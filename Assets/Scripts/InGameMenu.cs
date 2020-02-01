@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class InGameMenu : MonoBehaviour
 {
     [SerializeField]
-    GameObject inGameMenu;
+    private GameObject inGameMenu = null;
 
     [SerializeField]
     bool isShowing = false;
