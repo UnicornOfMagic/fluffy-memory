@@ -7,9 +7,4 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene001");
     }
-
-    public void GotoMenuScene()
-    {
-        SceneManager.LoadScene("StartMenu");
-    }
 }
