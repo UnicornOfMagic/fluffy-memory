@@ -1,39 +1,28 @@
 ﻿using Cinemachine;
-using Normal.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    GameObject player;
     CinemachineVirtualCamera cineCam;
-    // Start is called before the first frame update
+
+    [SerializeField]
+    GameObject playerLocater;
     void Start()
     {
-
         cineCam = GetComponent<CinemachineVirtualCamera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        if (!player)
-            FindPlayer();
-        
+        var player = playerLocater.GetComponent<LocalPlayerLocater>();
+        if (cineCam.Follow == null)
+            TryToFollowLocalPlayer();
     }
 
-    private void FindPlayer()
+    void TryToFollowLocalPlayer()
     {
-        var players = GameObject.FindGameObjectsWithTag("Player");
-        foreach(GameObject player in players)
-        {
-            if (player.GetComponent<RealtimeView>().isOwnedLocally)
-            {
-                this.player = player;
-                cineCam.Follow = this.player.transform;
-            }
-        }
+        var localPLayer = playerLocater.GetComponent<LocalPlayerLocater>().localPlayer;
+        if (localPLayer != null)
+            cineCam.Follow = localPLayer.transform;
     }
 }
