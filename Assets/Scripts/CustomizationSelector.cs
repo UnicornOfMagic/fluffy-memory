@@ -32,7 +32,7 @@ public class CustomizationSelector : MonoBehaviour
         var currentItem = PlayerPreferences.Customization;
         if ((int)currentItem == count - 1)
         {
-            return Customizations.None;
+            return 0;
         } else
         {
             return (Customizations)((int)currentItem + 1);
@@ -41,10 +41,11 @@ public class CustomizationSelector : MonoBehaviour
 
     private Customizations GetPreviousItem()
     {
+        var count = Enum.GetValues(typeof(Customizations)).Length;
         var currentItem = PlayerPreferences.Customization;
-        if ((int)currentItem == 0)
+        if (currentItem == 0)
         {
-            return Customizations.BunnyEars;
+            return (Customizations)(count - 1);
         }
         else
         {
