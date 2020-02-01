@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField]
-    private Canvas MainCanvas;
+    public Canvas MainCanvas = null;
     [SerializeField]
-    private Canvas CustomizeCanvas;
+    private Canvas CustomizeCanvas = null;
 
     public void GotoGameScene()
     {

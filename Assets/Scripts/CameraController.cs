@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     CinemachineVirtualCamera cineCam;
 
     [SerializeField]
-    GameObject playerLocater;
+    private GameObject playerLocater = null;
     void Start()
     {
         cineCam = GetComponent<CinemachineVirtualCamera>();

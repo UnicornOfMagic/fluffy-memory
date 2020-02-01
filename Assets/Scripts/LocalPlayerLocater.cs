@@ -7,7 +7,7 @@ public class LocalPlayerLocater : MonoBehaviour
     public GameObject localPlayer = null;
 
     [SerializeField]
-    GameObject startMessage;
+    public GameObject startMessage;
 
     void Start()
     {
