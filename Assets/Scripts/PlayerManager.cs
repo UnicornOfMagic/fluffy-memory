@@ -20,7 +20,7 @@ namespace Normal.Realtime.Examples
         {
             var playerPrefs = FindObjectOfType<PlayerPreferences>();
 
-            if (playerPrefs.BunnyEars)
+            if (playerPrefs != null && playerPrefs.BunnyEars)
             {
                 // Instantiate the CubePlayer for this client once we've successfully connected to the room
                 Realtime.Instantiate("PlayerWithEars",             // Prefab name
@@ -39,7 +39,6 @@ namespace Normal.Realtime.Examples
                     preventOwnershipTakeover: true,                // Prevent other clients from calling RequestOwnership() on the root RealtimeView.
                                  useInstance: realtime);           // Use the instance of Realtime that fired the didConnectToRoom event.
             }
-
         }
     }
 }
