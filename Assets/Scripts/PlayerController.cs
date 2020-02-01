@@ -28,11 +28,13 @@ public class PlayerController : MonoBehaviour
 
         // Grab the x/y input from WASD / a controller
         float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Jump");
         float z = Input.GetAxis("Vertical");
 
         // Apply to the transform
         Vector3 localPosition = transform.localPosition;
         localPosition.x += x * speed * Time.deltaTime * 3;
+        localPosition.y += y * speed * Time.deltaTime * 3;
         localPosition.z += z * speed * Time.deltaTime * 3;
         transform.localPosition = localPosition;
     }
