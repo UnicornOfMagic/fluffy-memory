@@ -39,6 +39,12 @@ public class PlayerController : MonoBehaviour
         transform.localPosition = localPosition;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "PickupItem") {
+            other.transform.SetParent(transform);
+        }
+    }
 
 }
 
