@@ -1,36 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Normal.Realtime;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 1.0f;
+    [SerializeField]
+    public float speed = 5.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    private RealtimeView _realtimeView;
+    private RealtimeTransform _realtimeTransform;
+
+    private void Awake()
     {
-        
+        _realtimeView = GetComponent<RealtimeView>();
+        _realtimeTransform = GetComponent<RealtimeTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        var rigidBody = this.GetComponent<Rigidbody>();
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rigidBody.MovePosition(Vector3.MoveTowards(rigidBody.position, rigidBody.position + new Vector3(0, 0, speed), 0.1f));
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rigidBody.MovePosition(Vector3.MoveTowards(rigidBody.position, rigidBody.position + new Vector3(0, 0, speed * -1), 0.1f));
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            rigidBody.MovePosition(Vector3.MoveTowards(rigidBody.position, rigidBody.position + new Vector3(speed, 0, 0), 0.1f));
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            rigidBody.MovePosition(Vector3.MoveTowards(rigidBody.position, rigidBody.position + new Vector3(speed * -1, 0, 0), 0.1f));
-        }
+        // If this CubePlayer prefab is not owned by this client, bail.
+        if (!_realtimeView.isOwnedLocally)
+            return;
+
+        // Make sure we own the transform so that RealtimeTransform knows to use this client's transform to synchronize remote clients.
+        _realtimeTransform.RequestOwnership();
+
+        // Grab the x/y input from WASD / a controller
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        // Apply to the transform
+        Vector3 localPosition = transform.localPosition;
+        localPosition.x += x * speed * Time.deltaTime * 3;
+        localPosition.z += z * speed * Time.deltaTime * 3;
+        transform.localPosition = localPosition;
     }
+
+
 }
+
