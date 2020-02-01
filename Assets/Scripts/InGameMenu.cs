@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GamePauseMenu : MonoBehaviour
+public class InGameMenu : MonoBehaviour
 {
     [SerializeField]
-    GameObject pauseMenu;
+    GameObject inGameMenu;
 
     [SerializeField]
     bool isShowing = false;
@@ -18,7 +18,7 @@ public class GamePauseMenu : MonoBehaviour
     public void ToggleMenuActive()
     {
         isShowing = !isShowing;
-        pauseMenu.SetActive(isShowing);
+        inGameMenu.SetActive(isShowing);
     }
     void Update()
     {
