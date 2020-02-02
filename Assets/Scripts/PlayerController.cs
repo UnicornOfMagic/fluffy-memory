@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     private RealtimeView _realtimeView;
     private RealtimeTransform _realtimeTransform;
+    private Collider _hoveredItem;
+    private float _lastInteractionTime;
 
     private void Awake()
     {
@@ -37,12 +39,30 @@ public class PlayerController : MonoBehaviour
         localPosition.y += y * speed * Time.deltaTime * 3;
         localPosition.z += z * speed * Time.deltaTime * 3;
         transform.localPosition = localPosition;
+
+        bool canInteract = _hoveredItem != null && _lastInteractionTime != Time.time;
+        if (Input.GetKeyDown(KeyCode.E)) {
+            _lastInteractionTime = Time.time;
+            if (_hoveredItem.transform.parent == transform) {
+                _hoveredItem.transform.SetParent(null);
+            } else 
+            {
+                _hoveredItem.transform.SetParent(transform);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "PickupItem") {
-            other.transform.SetParent(transform);
+            _hoveredItem = other;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "PickupItem") {
+            _hoveredItem = null;
         }
     }
 
