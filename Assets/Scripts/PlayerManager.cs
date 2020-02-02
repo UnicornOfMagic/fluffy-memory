@@ -14,6 +14,7 @@ namespace Normal.Realtime.Examples
 
             // Notify us when Realtime successfully connects to the room
             _realtime.didConnectToRoom += DidConnectToRoom;
+            _realtime.didConnectToRoom += CreateBall;
         }
 
         private void DidConnectToRoom(Realtime realtime)
@@ -34,9 +35,19 @@ namespace Normal.Realtime.Examples
                 }
             }
 
-            // Instantiate the CubePlayer for this client once we've successfully connected to the room
-            Realtime.Instantiate(playerTypeToLoad,                     // Prefab name
-                                position: Vector3.up,          // Start 1 meter in the air
+            InstantiateNewObjectInWorld(playerTypeToLoad, realtime);
+        }
+
+        private void CreateBall(Realtime realtime)
+        {
+            InstantiateNewObjectInWorld("Sphere", realtime);
+        }
+
+        private void InstantiateNewObjectInWorld(string prefab, Realtime realtime)
+        {
+            Vector3 startingPosition = new Vector3(Random.Range(-4, 4),1, Random.Range(-4, 4 ));
+            Realtime.Instantiate(prefab,                     // Prefab name
+                                position: startingPosition,          // Start 1 meter in the air
                                 rotation: Quaternion.identity, // No rotation
                            ownedByClient: true,                // Make sure the RealtimeView on this prefab is owned by this client
                 preventOwnershipTakeover: true,                // Prevent other clients from calling RequestOwnership() on the root RealtimeView.
