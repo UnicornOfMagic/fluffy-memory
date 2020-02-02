@@ -29,6 +29,9 @@ namespace Normal.Realtime.Examples
                     case Customizations.BunnyEars:
                         playerTypeToLoad = "PlayerWithEars";
                         break;
+                    case Customizations.Bunny:
+                        playerTypeToLoad = "bunny1";
+                        break;
                     case Customizations.None:
                     default:
                         break;
@@ -45,11 +48,11 @@ namespace Normal.Realtime.Examples
 
         private void InstantiateNewObjectInWorld(string prefab, Realtime realtime, bool ownedByClient = false)
         {
-            Vector3 startingPosition = new Vector3(Random.Range(-4, 4),1, Random.Range(-4, 4 ));
+            Vector3 startingPosition = new Vector3(Random.Range(-4, 4),3, Random.Range(-4, 4 ));
             Realtime.Instantiate(prefab,                     // Prefab name
                                 position: startingPosition,          // Start 1 meter in the air
                                 rotation: Quaternion.identity, // No rotation
-                           ownedByClient: ownedByClient,                // Make sure the RealtimeView on this prefab is owned by this client
+                           ownedByClient: ownedByClient,       // Make sure the RealtimeView on this prefab is owned by this client
                 preventOwnershipTakeover: true,                // Prevent other clients from calling RequestOwnership() on the root RealtimeView.
                              useInstance: realtime);           // Use the instance of Realtime that fired the didConnectToRoom event.
         }
