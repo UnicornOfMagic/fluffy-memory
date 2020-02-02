@@ -13,5 +13,6 @@ public class PlayerPreferences : MonoBehaviour
 public enum Customizations
 {
     None,
-    BunnyEars
+    BunnyEars,
+    Bunny
 }

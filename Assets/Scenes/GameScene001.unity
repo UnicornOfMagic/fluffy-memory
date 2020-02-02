@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -765,6 +765,101 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _realtime
+      value: 
+      objectReference: {fileID: 6028042704252746063}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[0]
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[1]
+      value: 228
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[2]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[3]
+      value: 194
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[4]
+      value: 159
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[5]
+      value: 195
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[6]
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[7]
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[8]
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[9]
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[10]
+      value: 222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[11]
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[12]
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[13]
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[14]
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _sceneViewUUID.Array.data[15]
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708943863674765937, guid: 3377c46529537407b94029117e895e1d,
+        type: 3}
+      propertyPath: _isRootPrefabView
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3377c46529537407b94029117e895e1d, type: 3}
@@ -2213,6 +2308,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b74a375790947c54da631b38421493aa, type: 3}
+--- !u!114 &6028042704252746063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6028042703902983932, guid: b74a375790947c54da631b38421493aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6028042704252746062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dcaba2234393f4a829d0fd1fb4a608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6236491016554676838
 PrefabInstance:
   m_ObjectHideFlags: 0

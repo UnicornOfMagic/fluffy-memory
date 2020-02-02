@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ae3a638a9694d55b0d54925778dc46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BunnyEars: 0
+  Customization: 0
 --- !u!1 &2084409578
 GameObject:
   m_ObjectHideFlags: 0
